@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="sidebar">
-    <a href="index.php"><img src="images/snare.jpg" id="profile" /></a>
-    <a href="index.php">Home</a>
-    <a href="assignments.php">Assignments</a>
-  </div>
+<?php include("templates/header.php");?>
+
 <div class="content">
-    <h1>Page Title</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-  <div class="footer">
-      Last edited:
-      <?php
-        putenv("TZ=America/Los_Angeles");
-        echo date("m/d/y", filemtime($_SERVER["SCRIPT_FILENAME"]));
+    <h1>Music Education</h1>
+    <p>Sam Haynes is available for contract work with your music ensemble. Sam has deep ties to the area, with varied performance and teaching experience. Notable performance roles include holding the assistant and head drum major positions at Bella Vista High School, playing cymbals for Vanguard Winter Percussion, and a host of performances with varied ensembles as a percussionist at BYU-Idaho. Sam also has 4 years of teaching experience under his belt. This includes times with Bella Vista High School, Roseville High School, South Fremont High School, and the BYU-Idaho drumline. Included below are performance photos for the various ensembles in which he has been involved as a staff member, where Sam composed music and led the staff in visual design.</p>
+    <div class="gallery">
+      <?php 
+        // directory to search for images
+        $dir = "images/";
+        // array to store images
+        $image_arr = array();
+
+        // Open a directory, and read its contents
+        if (is_dir($dir)){
+          if ($dh = opendir($dir)){
+            $pattern = '/^grid/';
+            while (($file = readdir($dh)) !== false){
+              if(preg_match($pattern,$file) == true) {
+                array_push($image_arr,$file);
+              } 
+            }
+            closedir($dh);
+          }
+        }
+        foreach($image_arr as $idx=>$value) {
+          echo "<figure class=\"gallery__item gallery__item--".$idx."\">";
+          echo "<img src=\"images/".$value."\" class =\"gallery__img\" alt=\"Image ".$idx."\">";
+          echo "</figure>";
+        }
+        
       ?>
     </div>
-</body>
+  </div>
+  
+
+<?php include("templates/footer.php");?>
   
  
