@@ -25,7 +25,6 @@ body {
   padding: 16px;
   text-decoration: none;
   text-align: center;
-  vertical-align: middle;
 }
 
 /* Active/current link */
@@ -41,11 +40,18 @@ body {
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
+.content {
     margin-left: 15%;
     padding: 5% 5%;
     height: 1000px;
     background-color: black;
     color: white;
     text-align: center;
-  }
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+}
