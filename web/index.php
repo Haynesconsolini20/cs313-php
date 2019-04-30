@@ -1,5 +1,6 @@
 <?php
 
-  phpinfo();
-
 ?>
+<body>
+<p> test </p>
+</body>
