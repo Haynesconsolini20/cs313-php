@@ -1,4 +1,4 @@
-<?php include("templates/header.php");?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/templates/header.php");?>
 
 <div class="content">
     <h1>Music Education</h1>
@@ -33,6 +33,6 @@
   </div>
   
 
-<?php include("templates/footer.php");?>
+<?php include($_SERVER["DOCUMENT_ROOT"]."/templates/footer.php");?>
   
  
