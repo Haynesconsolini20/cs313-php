@@ -2,7 +2,7 @@
     include($_SERVER["DOCUMENT_ROOT"]."/templates/header.php");
 ?>
 <div class="content">
-    <div class="gallery">
+<div class="gallery">
     <?php 
         // directory to search for images
         $dir = "images/";
@@ -42,8 +42,8 @@
         foreach($image_arr as $idx=>$value) {
           echo "<figure class=\"gallery__item gallery__item--".$idx."\">";
           echo "<img src=\"images/".$value."\" class =\"gallery__img\" alt=\"Image ".$idx."\">";
-          echo $caption_arr[$idx];
-          echo "<button class=btn_gallery_item btn_gallery__item--".$idx.">Add to cart</button";
+          echo $caption_arr[$idx]."<br />";
+          echo "<button class=btn_gallery_item btn_gallery__item--".$idx.">Add to cart</button>";
           echo "</figure>";
         }
         
