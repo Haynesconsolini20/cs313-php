@@ -43,6 +43,7 @@
           echo "<figure class=\"gallery__item gallery__item--".$idx."\">";
           echo "<img src=\"images/".$value."\" class =\"gallery__img\" alt=\"Image ".$idx."\">";
           echo $caption_arr[$idx];
+          echo "<button class=btn_gallery_item btn_gallery__item--".$idx.">Add to cart</button";
           echo "</figure>";
         }
         
