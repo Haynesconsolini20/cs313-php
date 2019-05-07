@@ -76,3 +76,11 @@ body {
   height: 100%;
   
 }
+
+#cart {
+  text-align: right;
+}
+
+#cartCount {
+  display: inline;
+}
