@@ -84,3 +84,19 @@ body {
 #cartCount {
   display: inline;
 }
+
+.custom_btn {
+  display: inline-block;
+  color:white;
+  background: #1c1c1c;
+  outline: 1px solid white;
+  padding: 5px;
+}
+
+.custom_btn:hover {
+  background-color: rgba(255, 0, 0, 0.637);
+}
+
+.custom_btn a {
+  text-decoration: none;
+}

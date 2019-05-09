@@ -11,7 +11,7 @@
 <div id="cart">
 Items in cart: <div id="cartCount"><?php echo count($_SESSION['item']);?></div>
 </div>
-<a href="viewCart.php">Proceed to checkout</a>
+<div class="custom_btn"><a href="viewCart.php">Proceed to checkout</a></div>
 <div class="gallery">
     <?php 
         //function for extracting price from caption
@@ -76,7 +76,7 @@ Items in cart: <div id="cartCount"><?php echo count($_SESSION['item']);?></div>
           echo "<figure class=\"gallery__item gallery__item--".$idx."\">";
           echo "<img src=\"images/".$value."\" class =\"gallery__img\" alt=\"Image ".$idx."\">";
           echo $caption_arr[$idx]."<br />";
-          echo "<button class=btn_gallery_item btn_gallery__item--".$idx." data-price=".extractPrice($caption_arr[$idx])." data-item=".extractItem($caption_arr[$idx]).">Add to cart</button>";
+          echo "<div class=\"btn_gallery_item btn_gallery__item--".$idx." custom_btn\" data-price=".extractPrice($caption_arr[$idx])." data-item=".extractItem($caption_arr[$idx]).">Add to cart</div>";
           echo "</figure>";
         }
         

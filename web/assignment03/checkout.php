@@ -1,7 +1,5 @@
 <?php
     session_start();
-    $all = get_defined_vars();
-    print_r($all);
     include($_SERVER["DOCUMENT_ROOT"]."/templates/header.php");
 ?>
 <div class="content">
@@ -17,7 +15,8 @@
         <input type="text" name="zip"><br/>
         <input type="submit" value="Complete Purchase">
     </form>
-    <a href="viewCart.php">Return to cart</a>
+    <br><br><br>
+    <div class="custom_btn"><a href="viewCart.php">Return to cart</a></div>
   </div>
 <?php 
     include($_SERVER["DOCUMENT_ROOT"]."/templates/footer.php");
