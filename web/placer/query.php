@@ -20,7 +20,8 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-foreach ($db->query('SELECT username, password FROM user') as $row)
+echo 'made it to the loop';
+foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {
   echo 'user: ' . $row['username'];
   echo ' password: ' . $row['password'];
