@@ -21,13 +21,13 @@ catch (PDOException $ex)
   die();
 }
 
-/*foreach ($db->query('SELECT username, user_password FROM users') as $row)
+foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {
-  echo 'user: ' . $row['username'];
-  echo ' password: ' . $row['user_password'];
-  echo '<br/>';
-}*/
-echo 'test';
+  $db_obj->name = $row['username'];
+  $db_obj->passowrd = $row['user_password'];
+}
+
+echo $db_obj;
 
 
 

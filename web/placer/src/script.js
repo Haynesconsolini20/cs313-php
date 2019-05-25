@@ -4,7 +4,8 @@ $(document).ready(function(){
             type : "POST",
             url : "query.php",
             success : function(data){
-                alert(data);
+                var results = JSON.parse(data);
+                alert(restults.name);
             }
         })
      });
