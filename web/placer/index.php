@@ -17,9 +17,7 @@
     <div class="content">
         <h1>Parents</h1>
         <p>Members</p>
-        <form action="query.php" method="post">
-            Username: <input type="text" name="username"><br>
-            Password: <input type="text" name="password"><br>
-            <input type="submit">
-        </form>
+        Username: <input type="text" name="username"><br>
+        Password: <input type="text" name="password"><br>
+        <button id="submit_qry">Submit</button>
     </div>

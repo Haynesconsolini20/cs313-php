@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#submit').click(function(){
+    $('#submit_qry').click(function(){
         $.ajax({
             type : "POST",
             url : "query.php",
