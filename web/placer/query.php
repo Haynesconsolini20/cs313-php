@@ -24,10 +24,11 @@ catch (PDOException $ex)
 foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {
   $db_obj->name = $row['username'];
-  $db_obj->passowrd = $row['user_password'];
+  $db_obj->password = $row['user_password'];
 }
 
-echo $db_obj;
+$my_json = json_encode($db_obj);
+echo $my_json;
 
 
 
