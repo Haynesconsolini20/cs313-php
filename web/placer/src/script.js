@@ -5,7 +5,7 @@ $(document).ready(function(){
             url : "query.php",
             success : function(data){
                 var results = JSON.parse(data);
-                alert(restults.name);
+                alert(results.name);
             }
         })
      });
