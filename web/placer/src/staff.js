@@ -1,8 +1,9 @@
 $(document).ready(function(){
     $('#query').on('change',function(){
         var section = this.value;
-        $.post( "query", { type: "staff", section: section })
+        $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
+                alert("Finished");
                 alert( "Data Loaded: " + data );
         });
      });
