@@ -21,14 +21,18 @@ catch (PDOException $ex)
   die();
 }
 
-foreach ($db->query('SELECT username, user_password FROM users') as $row)
+if ($_POST['type'] == 'staff') {
+  echo 'staff detected';
+  echo $_POST['section'];
+}
+/*foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {
   $db_obj->name = $row['username'];
   $db_obj->password = $row['user_password'];
 }
 
 $my_json = json_encode($db_obj);
-echo $my_json;
+echo $my_json;*/
 
 
 
