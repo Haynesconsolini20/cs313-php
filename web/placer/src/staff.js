@@ -4,7 +4,7 @@ $(document).ready(function(){
         $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);
-                alert(typeof(parsed));
+                parsed = JSON.stringify(parsed);
                 var names = parsed.split(',');
                 names.forEach(element => {
                     var name_split = element.split('_');
