@@ -1,4 +1,6 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -36,3 +38,4 @@ catch(Exceptionn $e)
 {
     echo $e->getMessage();
 }
+?>
