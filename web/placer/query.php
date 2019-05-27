@@ -38,6 +38,9 @@ if ($_POST['type'] == 'staff') {
     echo $e->getMessage();
   }
 }
+else {
+  echo "type not found";
+}
 /*foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {
   $db_obj->name = $row['username'];
