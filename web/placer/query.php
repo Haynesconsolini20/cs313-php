@@ -25,12 +25,13 @@ if ($_POST['type'] == 'staff') {
   try 
   {
     $section= array();
+    //$section_query = $db->query('SELECT id FROM instruments WHERE instrument_desc = \''.$_POST['section'].'\'');
     $section_query = $db->query('SELECT id FROM instruments WHERE instrument_desc = \''.$_POST['section'].'\'');
     $section_id = 0;
     foreach($section_query as $row) {
         $section_id = $row['id'];
     }
-    foreach ($db->query('SELECT first_name, last_name FROM users WHERE instrument_id = '.$section_id) as $row)
+    foreach ($db->query('SELECT first_name, last_name FROM users') as $row)
     {
       array_push($section,$row['first_name'].'_'.$row['last_name']);
     }
