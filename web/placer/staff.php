@@ -22,4 +22,5 @@
             <option value="tenor">Tenors</option>
             <option value="bass">Basses</option>
         </select>
+        <div id="section_list"></div>
     </div>

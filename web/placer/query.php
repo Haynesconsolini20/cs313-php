@@ -22,8 +22,14 @@ catch (PDOException $ex)
 }
 
 if ($_POST['type'] == 'staff') {
-  echo 'staff detected';
-  echo $_POST['section'];
+  $section= array();
+  $section_id = $db->query('SELECT id FROM instruments WHERE instrument_desc == '.$_POST['section'])['id'];
+  foreach ($db->query('SELECT first_name, last_name FROM users WHERE instrument_id == '.$section_id) as $row)
+  {
+    array_push($section,$row['first_name'].'_'.$row['last_name']);
+  }
+  $json_section = json_encode($section);
+  echo $json_section;
 }
 /*foreach ($db->query('SELECT username, user_password FROM users') as $row)
 {

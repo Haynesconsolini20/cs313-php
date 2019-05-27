@@ -3,8 +3,8 @@ $(document).ready(function(){
         var section = this.value;
         $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
-                alert("Finished");
-                alert( "Data Loaded: " + data );
+                var parsed = jQuery.parseJSON(data);
+                alert(parsed);
         });
      });
     });
