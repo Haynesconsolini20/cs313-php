@@ -5,7 +5,12 @@ $(document).ready(function(){
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);
                 alert(typeof(parsed));
-                alert(parsed);
+                var names = parsed.split(',');
+                names.forEach(element => {
+                    var name_split = element.split('_');
+                    var html = '<p>' + name_split[0] + ' ' + name_split[1] + '</p><br />';
+                    $('#section_list').append(html);
+                });
         });
      });
     });
