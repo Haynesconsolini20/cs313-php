@@ -28,6 +28,9 @@ try
     $section= array();
     $section_id = $db->query('SELECT id FROM instruments WHERE instrument_desc = \'Snare\'');
     print_r($section_id);
+    foreach($section_id as $row) {
+        print_r($row);
+    }
     foreach ($db->query('SELECT first_name, last_name FROM users WHERE instrument_id = '.$section_id) as $row)
     {
       array_push($section,$row['first_name'].'_'.$row['last_name']);
