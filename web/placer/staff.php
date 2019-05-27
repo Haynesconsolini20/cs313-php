@@ -18,9 +18,9 @@
         <h1>Find your members</h1>
         <p>Choose your section below, and all currently enrolled students in that section will be listed.</p>
         <select id="query" name="section">
-            <option value="snare">Snares</option>
-            <option value="tenor">Tenors</option>
-            <option value="bass">Basses</option>
+            <option value="Snare">Snares</option>
+            <option value="Tenor">Tenors</option>
+            <option value="Bass">Basses</option>
         </select>
         <div id="section_list"></div>
     </div>
