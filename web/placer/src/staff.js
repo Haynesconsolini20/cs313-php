@@ -4,7 +4,7 @@ $(document).ready(function(){
         $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);
-                alert(parsed);
+                alert(typeof(parsed));
         });
      });
     });
