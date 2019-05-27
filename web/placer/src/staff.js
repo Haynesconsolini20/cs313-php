@@ -4,9 +4,8 @@ $(document).ready(function(){
         $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);
-                parsed.array.forEach(element => {
-                    alert(element);
-                });
+                alert(typeof(parsed));
+                alert(parsed);
         });
      });
     });
