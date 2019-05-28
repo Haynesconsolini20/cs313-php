@@ -22,6 +22,7 @@ $(document).ready(function(){
         $.post("query.php",{type: 'login', 'username': username, 'password': password, role: 'Staff'})
             .done(function(data){
                 var results = JSON.parse(data);
+                alert(results);
                 if (results.success == true) {
                     //reload page
                     location.reload();

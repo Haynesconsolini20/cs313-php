@@ -10,7 +10,8 @@ if ($_SESSION['logged_in'] == false) {
     <p>Please enter your login information below: </p>
     Username: <input type="text" id="username"><br>
     Password: <input type="text" id="password"><br>
-    <button id="login">Submit</button>';
+    <button id="login">Submit</button>
+    <div id="fail"></div>';
 }
 else if ($_SESSION['role'] == 'Staff') {
     echo 
