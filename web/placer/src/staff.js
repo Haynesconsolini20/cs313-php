@@ -5,6 +5,8 @@ $(document).ready(function(){
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);
                 parsed = JSON.stringify(parsed);
+                var pattern = /(\"|\[|\])/;
+                parsed = str.replace(pattern,"");
                 var names = parsed.split(',');
                 names.forEach(element => {
                     var name_split = element.split('_');
