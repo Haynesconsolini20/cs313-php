@@ -1,3 +1,6 @@
+DROP TABLE users, instruments, roles, ensemble_19;
+DROP SEQUENCE instrument_id_s1, roles_id_s1, users_id_s1;
+
 CREATE TABLE instruments (
     id int PRIMARY KEY,
     instrument_desc varchar(30) NOT NULL
@@ -15,7 +18,7 @@ CREATE TABLE users (
     first_name varchar(30) NOT NULL,
     last_name varchar(30) NOT NULL,
     role_id int NOT NULL REFERENCES roles (id),
-    instrument_id int REFERENCES instruments (id),
+    instrument_id int NULL REFERENCES instruments (id),
     username varchar(30) NOT NULL UNIQUE,
     user_password varchar(30) NOT NULL
 );

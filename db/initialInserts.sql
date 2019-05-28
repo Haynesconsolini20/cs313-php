@@ -1,3 +1,8 @@
+DELETE FROM users;
+DELETE FROM instruments;
+DELETE FROM roles;
+
+
 INSERT INTO instruments
 VALUES(nextval('instrument_id_s1'), 'Snare');
 
@@ -31,5 +36,16 @@ nextval('users_id_s1'),
 (SELECT id FROM roles WHERE role_desc = 'Member'),
 (SELECT id FROM instruments WHERE instrument_desc = 'Bass'),
 'macy_w',
+'password123'
+);
+INSERT INTO users
+(id,first_name,last_name,role_id,username,user_password)
+VALUES
+(
+nextval('users_id_s1'),
+'Sam',
+'Haynes',
+(SELECT id FROM roles WHERE role_desc = 'Staff'),
+'sam_h',
 'password123'
 );

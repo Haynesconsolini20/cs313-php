@@ -8,7 +8,7 @@ session_start();
 print_r($_SESSION);
 if ($_SESSION['role'] == 'Member') {
     echo '<h1>Member page</h1>';
-    echo '<p>Name: '.$_SESSION['user_name'].'<br/>';
+    echo '<p>Name: '.$_SESSION['name'].'<br/>';
     echo 'Section: '.$_SESSION['section'].'<br/>';
     echo 'Status: '.$_SESSION['role'].'</p>';
 }

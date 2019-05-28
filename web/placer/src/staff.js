@@ -14,6 +14,22 @@ $(document).ready(function(){
                     var html = '<p>' + name_split[0] + ' ' + name_split[1] + '</p>';
                     $('#section_list').append(html);
                 });
-        });
+            });
      });
-    });
+     $("#login").on("click", function(){
+        var username = $("#username").val();
+        var password = $("#password").val();
+        $.post("query.php",{type: 'login', 'username': username, 'password': password, role: 'Staff'})
+            .done(function(data){
+                var results = JSON.parse(data);
+                if (results.success == true) {
+                    //reload page
+                    location.reload();
+                }
+                else {
+                    $("#fail").append('<p>Login failed, please try again</p>');
+                }
+
+            })
+    })
+});
