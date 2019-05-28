@@ -54,6 +54,7 @@ else if ($_POST['type'] == 'login') {
   $stmt->execute();
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $count = $stmt->rowCount();
+  $_SESSION['results'] = $results;
   $arr = array();
   if ($count == 1) {
     $_SESSION['name'] = $results['first_name'].' '.$results['last_name'];
