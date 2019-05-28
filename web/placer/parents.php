@@ -4,13 +4,14 @@
     <script src="src/parents.js"></script>
     <div class="content">
 <?php 
-print_r($_SESSION);
+//print_r($_SESSION);
 if ($_SESSION['role'] == 'Parent') {
     echo '<h1>Your children:</h1>';
-    foreach($_SESSION['children'] as $child)
-    echo '<p>Name: '.$child['name'].'<br/>';
-    echo 'Section: '.$child['section'].'<br/>';
-    echo 'Status: '.$child['role'].'</p>';
+    foreach($_SESSION['children'] as $child) {
+        echo '<p>Name: '.$child['name'].'<br/>';
+        echo 'Section: '.$child['section'].'<br/>';
+        echo 'Status: '.$child['role'].'</p>';
+    }
 }
 else if ($_SESSION['logged_in']) {
     echo '<h1>Please visit the web page appropriate to your role in order to use website features</h1>';
