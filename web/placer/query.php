@@ -2,10 +2,12 @@
 session_start();
 function parentLogin($data) {
   $family_id = $data['id'];
+  $_SESSION['family_id'] = $family_id;
   $query = 'SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc, u.id FROM users u LEFT JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id)  INNER JOIN family f ON (u.id = f.user_id) WHERE f.family_id = \''.$family_id.'\'';
   $stmt = $db->prepare($query);
   $stmt->execute();
   $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $_SESSION['child_results'] = $results;
   $children_arr = array();
   foreach($results as $child) {
     $child_arr = array();
