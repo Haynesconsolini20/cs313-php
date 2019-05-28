@@ -4,6 +4,7 @@
     <div class="content">
     <script src="src/staff.js"></script>
 <?php 
+print_r($_SESSION);
 if ($_SESSION['logged_in'] == false) { 
     echo       
     '<h1>Staff Login</h1>
