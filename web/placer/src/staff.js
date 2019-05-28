@@ -6,11 +6,11 @@ $(document).ready(function(){
                 var parsed = jQuery.parseJSON(data);
                 parsed = JSON.stringify(parsed);
                 var pattern = /(\"|\[|\])/;
-                parsed = str.replace(pattern,"");
+                parsed = parsed.replace(pattern,"");
                 var names = parsed.split(',');
                 names.forEach(element => {
                     var name_split = element.split('_');
-                    var html = '<p>' + name_split[0] + ' ' + name_split[1] + '</p><br />';
+                    var html = '<p>' + name_split[0] + ' ' + name_split[1] + '</p>';
                     $('#section_list').append(html);
                 });
         });
