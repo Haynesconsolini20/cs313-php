@@ -1,6 +1,7 @@
 <?php 
     include("header.php");
 ?>
+    <script src="src/members.js"></script>
     <div class="content">
 <?php 
 session_start();
@@ -11,9 +12,10 @@ else {
 echo        
         '<h1>Parents</h1>
         <p>Members</p>
-        Username: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
-        <button id="submit_qry">Submit</button>';
+        Username: <input type="text" id="username"><br>
+        Password: <input type="text" id="password"><br>
+        <button id="login">Submit</button>';
 }
 ?>
+<div id="fail"></div>
 </div>

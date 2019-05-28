@@ -1,4 +1,5 @@
 <?php 
+session_start();
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -42,6 +43,29 @@ if ($_POST['type'] == 'staff') {
   {
     echo $e->getMessage();
   }
+}
+else if ($_POST['type'] == 'login') {
+  $user = $_POST['username'];
+  $pw = $_POST['password'];
+  //SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc FROM users u INNER JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id) WHERE u.username = 'sean_w' AND u.user_password = 'password123';
+  $query = 'SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc FROM users u INNER JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id) WHERE u.username = \''.$user.'\' AND u.user_password = \''.$pw.'\'';
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $count = $stmt->rowCount();
+  $arr = array();
+  if ($count == 1) {
+    $_SESSION['name'] = $results['first_name'].' '.$results['last_name'];
+    $_SESSION['section'] = $results['instrument_desc'];
+    $_SESSION['role'] = $results['role_desc'];
+    $_SESSION['logged_in'] = true;
+    $arr['success'] = true;
+  }
+  else {
+    $arr['success'] = false;
+  }
+  $json = json_encode($arr);
+  echo $json;
 }
 else {
   echo "type not found";
