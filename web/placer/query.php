@@ -94,6 +94,7 @@ else if ($_POST['type'] == 'login') {
 }
 else if ($_POST['type'] == 'logout') {
   $_SESSION['logged_in'] = false;
+  $_SESSION['role'] = 'none';
 }
 else {
   echo "type not found";
