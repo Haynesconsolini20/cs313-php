@@ -58,9 +58,9 @@ else if ($_POST['type'] == 'login') {
   $_SESSION['count'] = $count;
   $arr = array();
   if ($count == 1) {
-    $_SESSION['name'] = $results['first_name'].' '.$results['last_name'];
-    $_SESSION['section'] = $results['instrument_desc'];
-    $_SESSION['role'] = $results['role_desc'];
+    $_SESSION['name'] = $results[0]['first_name'].' '.$results[0]['last_name'];
+    $_SESSION['section'] = $results[0]['instrument_desc'];
+    $_SESSION['role'] = $results[0]['role_desc'];
     $_SESSION['logged_in'] = true;
     $arr['success'] = true;
   }
