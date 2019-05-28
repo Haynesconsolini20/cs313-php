@@ -5,8 +5,11 @@
     <div class="content">
 <?php 
 session_start();
-if ($_SESSION['logged_in'] == true) {
-    echo '<h1>Logged in</h1>';
+if ($_SESSION['logged_in'] && $_SESSION['role'] == 'Member') {
+    echo '<h1>Member page</h1>';
+    echo '<p>Name: '.$_SESSION['user_name'].'<br/>';
+    echo 'Section: '.$_SESSION['section'].'<br/>';
+    echo 'Status: '.$_SESSION['role'].'</p>';
 }
 else {
 echo        
