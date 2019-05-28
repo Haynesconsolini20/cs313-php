@@ -26,7 +26,7 @@ echo
         <p>Members</p>
         Username: <input type="text" name="username"><br>
         Password: <input type="text" name="password"><br>
-        <button id="submit_qry">Submit</button>'
+        <button id="submit_qry">Submit</button>';
 }
 ?>
 </div>
