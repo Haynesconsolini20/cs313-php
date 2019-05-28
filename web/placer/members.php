@@ -5,7 +5,7 @@
     <div class="content">
 <?php 
 session_start();
-if ($_SESSION['logged_in'] && $_SESSION['role'] == 'Member') {
+if ($_SESSION['role'] == 'Member') {
     echo '<h1>Member page</h1>';
     echo '<p>Name: '.$_SESSION['user_name'].'<br/>';
     echo 'Section: '.$_SESSION['section'].'<br/>';
