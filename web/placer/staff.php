@@ -4,7 +4,7 @@
     <div class="content">
     <script src="src/staff.js"></script>
 <?php 
-print_r($_SESSION);
+//print_r($_SESSION);
 if ($_SESSION['logged_in'] == false) { 
     echo       
     '<h1>Staff Login</h1>
@@ -19,6 +19,7 @@ else if ($_SESSION['role'] == 'Staff') {
         '<h1>Find your members</h1>
         <p>Choose your section below, and all currently enrolled students in that section will be listed.</p>
         <select id="query" name="section">
+            <option value="none">--Section--</option>
             <option value="Snare">Snares</option>
             <option value="Tenor">Tenors</option>
             <option value="Bass">Basses</option>
