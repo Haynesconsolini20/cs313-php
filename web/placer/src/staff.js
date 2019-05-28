@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#query').on('change',function(){
         var section = this.value;
+        if (section == '--Section--') return;
         $.post( "query.php", { type: "staff", section: section })
             .done(function( data ) {
                 var parsed = jQuery.parseJSON(data);

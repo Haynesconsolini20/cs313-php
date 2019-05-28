@@ -9,6 +9,9 @@ VALUES(nextval('instrument_id_s1'), 'Snare');
 INSERT INTO instruments
 VALUES(nextval('instrument_id_s1'), 'Bass');
 
+INSERT INTO instruments
+VALUES(nextval('instrument_id_s1'), 'Tenor');
+
 INSERT INTO roles 
 VALUES(nextval('roles_id_s1'), 'Member');
 INSERT INTO roles 
@@ -25,6 +28,17 @@ nextval('users_id_s1'),
 (SELECT id FROM roles WHERE role_desc = 'Member'),
 (SELECT id FROM instruments WHERE instrument_desc = 'Snare'),
 'sean_w',
+'password123'
+);
+INSERT INTO users
+VALUES
+(
+nextval('users_id_s1'),
+'Kacy',
+'Clark',
+(SELECT id FROM roles WHERE role_desc = 'Member'),
+(SELECT id FROM instruments WHERE instrument_desc = 'Tenor'),
+'kacy_c',
 'password123'
 );
 INSERT INTO users
