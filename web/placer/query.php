@@ -79,7 +79,7 @@ else if ($_POST['type'] == 'login') {
   $arr = array();
   if ($count == 1) {
     if ($role == 'Parent') 
-      parentLogin($results);
+      parentLogin($results[0]);
     else {
       $_SESSION['name'] = $results[0]['first_name'].' '.$results[0]['last_name'];
       $_SESSION['section'] = $results[0]['instrument_desc'];
