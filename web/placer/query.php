@@ -1,5 +1,21 @@
 <?php 
 session_start();
+function parentLogin($data) {
+  $family_id = $data['id'];
+  $query = 'SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc, u.id FROM users u LEFT JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id)  INNER JOIN family f ON (u.id = f.user_id) WHERE f.family_id = \''.$family_id.'\'';
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $children_arr = array();
+  foreach($results as $child) {
+    $child_arr = array();
+    $child_arr['name'] = $child['first_name'].' '.$child[0]['last_name'];
+    $child_arr['section'] = $child['instrument_desc'];
+    $child_arr['role'] = $child['role_desc'];
+    array_push($children_arr, $child_arr);
+  }
+  $_SESSION['children'] = $children_arr;
+}
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -49,8 +65,7 @@ else if ($_POST['type'] == 'login') {
   $user = $_POST['username'];
   $pw = $_POST['password'];
   $role = $_POST['role'];
-  //SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc FROM users u INNER JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id) WHERE u.username = 'sean_w' AND u.user_password = 'password123';
-  $query = 'SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc FROM users u LEFT JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id) WHERE u.username = \''.$user.'\' AND u.user_password = \''.$pw.'\'';
+  $query = 'SELECT u.first_name,u.last_name,i.instrument_desc,r.role_desc, u.id FROM users u LEFT JOIN instruments i ON (u.instrument_id = i.id) INNER JOIN roles r ON (u.role_id = r.id) WHERE u.username = \''.$user.'\' AND u.user_password = \''.$pw.'\'';
   $_SESSION['query'] = $query;
   $stmt = $db->prepare($query);
   $stmt->execute();
@@ -60,9 +75,13 @@ else if ($_POST['type'] == 'login') {
   $_SESSION['count'] = $count;
   $arr = array();
   if ($count == 1) {
-    $_SESSION['name'] = $results[0]['first_name'].' '.$results[0]['last_name'];
-    $_SESSION['section'] = $results[0]['instrument_desc'];
-    $_SESSION['role'] = $results[0]['role_desc'];
+    if ($role == 'Parent') 
+      parentLogin($results);
+    else {
+      $_SESSION['name'] = $results[0]['first_name'].' '.$results[0]['last_name'];
+      $_SESSION['section'] = $results[0]['instrument_desc'];
+      $_SESSION['role'] = $results[0]['role_desc'];
+    }
     $_SESSION['logged_in'] = true;
     $arr['success'] = true;
   }
@@ -75,14 +94,6 @@ else if ($_POST['type'] == 'login') {
 else {
   echo "type not found";
 }
-/*foreach ($db->query('SELECT username, user_password FROM users') as $row)
-{
-  $db_obj->name = $row['username'];
-  $db_obj->password = $row['user_password'];
-}
-
-$my_json = json_encode($db_obj);
-echo $my_json;*/
 
 
 

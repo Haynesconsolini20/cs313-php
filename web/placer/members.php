@@ -16,8 +16,8 @@ else if ($_SESSION['logged_in']) {
 }
 else {
 echo        
-        '<h1>Parents</h1>
-        <p>Members</p>
+        '<h1>Members</h1>
+        <p>Please enter your login information below</p>
         Username: <input type="text" id="username"><br>
         Password: <input type="text" id="password"><br>
         <button id="login">Submit</button>';

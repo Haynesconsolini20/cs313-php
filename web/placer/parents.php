@@ -1,23 +1,28 @@
-<!DOCTYPE html>
-<head>
-  <link rel="stylesheet" href="styles/placer_style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="src/script.js"></script>
-</head>
-<body>
-    <div class="navbar">
-        <a href="parents.php">Parents</a>
-        <a href="members.php">Members</a>
-        <a href="index.php"><img id="logo" src="assets/logo.png"></a>
-        <a href="staff.php">Staff</a>
-        <a href="join.php">Join</a>
-    </div>
-    <div class="top">
-    </div>
+<?php 
+    include("header.php");
+?>
+    <script src="src/parents.js"></script>
     <div class="content">
-        <h1>Parents</h1>
-        <p>Members</p>
-        Username: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
-        <button id="submit_qry">Submit</button>
-    </div>
+<?php 
+//print_r($_SESSION);
+if ($_SESSION['role'] == 'Parent') {
+    echo '<h1>Your children:</h1>';
+    foreach($_SESSION['children'] as $child)
+    echo '<p>Name: '.$child['name'].'<br/>';
+    echo 'Section: '.$child['section'].'<br/>';
+    echo 'Status: '.$child['role'].'</p>';
+}
+else if ($_SESSION['logged_in']) {
+    echo '<h1>Please visit the web page appropriate to your role in order to use website features</h1>';
+}
+else {
+echo        
+        '<h1>Parents</h1>
+        <p>Please enter your login information below:</p>
+        Username: <input type="text" id="username"><br>
+        Password: <input type="text" id="password"><br>
+        <button id="login">Submit</button>';
+}
+?>
+<div id="fail"></div>
+</div>

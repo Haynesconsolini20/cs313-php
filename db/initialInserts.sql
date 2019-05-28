@@ -63,3 +63,30 @@ nextval('users_id_s1'),
 'sam_h',
 'password123'
 );
+INSERT INTO users
+(id,first_name,last_name,role_id,username,user_password)
+VALUES
+(
+nextval('users_id_s1'),
+'Mama',
+'Williams',
+(SELECT id FROM roles WHERE role_desc = 'Parent'),
+'mama_w',
+'password123'
+);
+
+INSERT INTO family
+VALUES
+(
+    (SELECT id FROM users WHERE username = 'macy_w'),
+    (SELECT id from users WHERE username = 'mama_w')
+);
+
+INSERT INTO family
+VALUES
+(
+    (SELECT id FROM users WHERE username = 'sean_w'),
+    (SELECT id from users WHERE username = 'mama_w')
+);
+
+

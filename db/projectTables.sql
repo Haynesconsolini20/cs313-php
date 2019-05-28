@@ -1,4 +1,4 @@
-DROP TABLE users, instruments, roles, ensemble_19;
+DROP TABLE users, instruments, roles, ensemble_19,family;
 DROP SEQUENCE instrument_id_s1, roles_id_s1, users_id_s1;
 
 CREATE TABLE instruments (
@@ -28,4 +28,9 @@ CREATE TABLE ensemble_19 (
     member_id int NOT NULL PRIMARY KEY,
     role_id int NOT NULL REFERENCES roles (id),
     instrument_id int NOT NULL REFERENCES instruments (id)
+);
+
+CREATE TABLE family (
+    user_id int NOT NULL REFERENCES users(id),
+    family_id int NOT NULL REFERENCES users(id)
 );
