@@ -32,7 +32,8 @@ if ($_POST['type'] == 'staff') {
     foreach($section_query as $row) {
         $section_id = $row['id'];
     }
-    foreach ($db->query('SELECT first_name, last_name FROM users') as $row)
+    $query = 'SELECT u.first_name, u.last_name FROM users u WHERE instrument_id = \''.$section_id.'\'';
+    foreach ($db->query($query) as $row)
     {
       array_push($section,$row['first_name'].'_'.$row['last_name']);
     }
