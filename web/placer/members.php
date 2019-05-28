@@ -5,6 +5,7 @@
     <div class="content">
 <?php 
 session_start();
+echo $_SESSION['role'];
 if ($_SESSION['role'] == 'Member') {
     echo '<h1>Member page</h1>';
     echo '<p>Name: '.$_SESSION['user_name'].'<br/>';
