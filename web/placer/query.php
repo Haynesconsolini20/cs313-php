@@ -92,6 +92,9 @@ else if ($_POST['type'] == 'login') {
   $json = json_encode($arr);
   echo $json;
 }
+else if ($_POST['type'] == 'logout') {
+  $_SESSION['logged_in'] = false;
+}
 else {
   echo "type not found";
 }

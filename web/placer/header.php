@@ -5,7 +5,7 @@
 <head>
   <link rel="stylesheet" href="styles/placer_style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="src/script.js"></script>
+  <script src="src/global.js"></script>
 </head>
 <body>
     <div class="navbar">

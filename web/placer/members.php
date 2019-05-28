@@ -25,3 +25,4 @@ echo
 ?>
 <div id="fail"></div>
 </div>
+<?php include('footer.php') ?>
