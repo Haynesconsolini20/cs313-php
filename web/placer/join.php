@@ -2,6 +2,7 @@
     include('header.php');
     print_r($_SESSION);
 ?>
+<script src="src/join.js"></script>
 <div class="content">
 <?php 
 if ($_SESSION['logged_in'] == false) {
