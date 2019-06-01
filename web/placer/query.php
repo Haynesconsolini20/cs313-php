@@ -101,7 +101,7 @@ else if ($_POST['type'] == 'register') {
   (id,first_name,last_name,role_id,username,user_password)
   VALUES
   (
-  nextval(\'users_id_s1\'),\'".
+  nextval('users_id_s1'),\'".
   $_POST['first_name']."\',\'".
   $_POST['last_name']."\',
   (SELECT id FROM roles WHERE role_desc = \'".$_POST['role']."\'),\'".
