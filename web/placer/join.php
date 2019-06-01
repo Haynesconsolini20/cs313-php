@@ -13,7 +13,7 @@ if ($_SESSION['logged_in'] == false) {
     First Name: <input type="text" id="first_name"><br>
     Last Name: <input type="text" id="last_name"><br>
     I am a: <select id="role">
-                <option value="Student">Student</option>
+                <option value="Member">Member</option>
                 <option value="Parent">Parent</option>
                 <option value="Staff">Instructor</option>
             </select>
