@@ -7,13 +7,7 @@ $(document).ready(function(){
         var role = $("#role").val();
         $.post("query.php",{'type': 'register', 'username': username, 'password': password, 'role':role, 'first_name': first_name, 'last_name': last_name})
             .done(function(data){
-                var results = JSON.parse(data);
-                if (results.success == true) {
-                    //reload page
-                    location.reload();
-                }
-                else {
-                    $("#fail").append('<p>Login failed, please try again</p>');
+                location.reload();
                 }
 
             })

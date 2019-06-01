@@ -19,8 +19,9 @@ if ($_SESSION['logged_in'] == false) {
             </select>
     <button id="submit">Submit info</button>';
 }
-else if ($_SESSION['logged_in'] == true) {
-    echo '<h1>Please navigate to the appropriate page to use the website features. If you just created an account, please be patient
+else if ($_SESSION['registered'] == true) {
+    echo '<h1>Please navigate to the appropriate page to use the website features. If you just created an account, 
+            log in at the appropriate page and please be patient
             while a staff member verifies your account and finalizes your registration.';
 }
 ?>

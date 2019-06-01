@@ -112,6 +112,7 @@ else if ($_POST['type'] == 'register') {
   $stmt = $db->prepare($query);
   $stmt->execute();
   echo 'Success';
+  $_SESSION['registered'] = true;
 }
 else {
   echo "type not found";
