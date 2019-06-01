@@ -96,6 +96,23 @@ else if ($_POST['type'] == 'logout') {
   $_SESSION['logged_in'] = false;
   $_SESSION['role'] = 'none';
 }
+else if ($_POST['type'] == 'new_user') {
+  $query = "INSERT INTO users
+  (id,first_name,last_name,role_id,username,user_password)
+  VALUES
+  (
+  nextval(\'users_id_s1\'),\'".
+  $_POST['first_name']."\',\'".
+  $_POST['last_name']."\',
+  (SELECT id FROM roles WHERE role_desc = \'".$_POST['role']."\'),\'".
+  $_POST['username']."\',\'".
+  $_POST['password']."\'
+  )";
+  $_SESSION['query'] = $query;
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  echo 'Success';
+}
 else {
   echo "type not found";
 }
