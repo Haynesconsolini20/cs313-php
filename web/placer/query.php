@@ -96,7 +96,7 @@ else if ($_POST['type'] == 'logout') {
   $_SESSION['logged_in'] = false;
   $_SESSION['role'] = 'none';
 }
-else if ($_POST['type'] == 'new_user') {
+else if ($_POST['type'] == 'register') {
   $query = "INSERT INTO users
   (id,first_name,last_name,role_id,username,user_password)
   VALUES
