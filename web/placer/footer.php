@@ -1,2 +1,2 @@
-<button id="logout">Logout</button>
+<button id="logout" class="button">Logout</button>
 </body>

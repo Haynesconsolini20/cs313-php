@@ -13,15 +13,15 @@ else if ($_SESSION['logged_in'] == false) {
     echo '
     <h1>Sign up for an account</h1>
     Username: <input type="text" id="username"><br>
-    Password: <input type="text" id="password"><br>
+    Password: <input type="password" id="password"><br>
     First Name: <input type="text" id="first_name"><br>
     Last Name: <input type="text" id="last_name"><br>
     I am a: <select id="role">
                 <option value="Member">Member</option>
                 <option value="Parent">Parent</option>
                 <option value="Staff">Instructor</option>
-            </select><br><br>
-    <div class="custom_btn"><a href="#" id="submit">Submit info</a></div>';
+            </select><br>
+    <button id="submit" class="button">Submit info</button>';
 }
 ?>
 </div>
