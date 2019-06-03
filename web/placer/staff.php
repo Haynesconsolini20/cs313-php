@@ -68,9 +68,9 @@ else if ($_SESSION['role'] == 'Staff') {
                         <option value=Tenor>Tenor</option>
                         <option value=Bass>Bass</option>
                     </select>
-                </td>
-                </table>";
+                </td>";
     }
+    echo "</table>";
 
 }
 else {
