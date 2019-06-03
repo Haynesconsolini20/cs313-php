@@ -35,7 +35,7 @@ $(document).ready(function(){
     })
     $(".change_section").on("change", function(){
         var user_id = this.id;
-        var section = this.val();
+        var section = this.value;
         if (section == "none") return;
         $.post("query.php",  {type: "change_section", section: section, user: user_id})
             .done(function(data){
