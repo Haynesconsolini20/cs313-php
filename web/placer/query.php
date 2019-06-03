@@ -117,7 +117,7 @@ else if ($_POST['type'] == 'register') {
 else if ($_POST['type'] == 'change_section') {
   $query = "UPDATE users
             SET
-              instrument_id = (SELECT id FROM instruments WHERE instrument_desc =".$_POST['section'].")
+              instrument_id = (SELECT id FROM instruments WHERE instrument_desc = '".$_POST['section']."')
             WHERE
               id =".$_POST['user'];
   $_SESSION['query'] = $query;
