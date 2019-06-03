@@ -2,7 +2,12 @@ body {
     background-color: #fafafa;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+table {
+    border: 1px solid black;
+}
+td {
+    border: 1px solid black;
+}
 .button {
     background-color: #fafafa;
     border: 1px solid black;

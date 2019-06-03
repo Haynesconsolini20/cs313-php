@@ -61,12 +61,15 @@ else if ($_SESSION['role'] == 'Staff') {
         echo "<tr>
                 <td>".$row['first_name']."</td>
                 <td>".$row['last_name']."</td>
-                <select class=change_section id=".$row['id'].">
-                    <option value=none>-----</option>
-                    <option value=Snare>Snare</option>
-                    <option value=Tenor>Tenor</option>
-                    <option value=Bass>Bass</option>
-                </select>";
+                <td>
+                    <select class=change_section id=".$row['id'].">
+                        <option value=none>-----</option>
+                        <option value=Snare>Snare</option>
+                        <option value=Tenor>Tenor</option>
+                        <option value=Bass>Bass</option>
+                    </select>
+                </td>
+                </table>";
     }
 
 }
