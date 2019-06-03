@@ -1,6 +1,5 @@
 <?php 
     include('header.php');
-    print_r($_SESSION);
 ?>
 <script src="src/join.js"></script>
 <div class="content">
@@ -21,8 +20,8 @@ else if ($_SESSION['logged_in'] == false) {
                 <option value="Member">Member</option>
                 <option value="Parent">Parent</option>
                 <option value="Staff">Instructor</option>
-            </select>
-    <button id="submit">Submit info</button>';
+            </select><br><br>
+    <div class="custom_btn"><a href="#" id="submit">Submit info</a></div>';
 }
 ?>
 </div>
