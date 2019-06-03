@@ -20,7 +20,7 @@ echo
         <p>Please enter your login information below</p>
         Username: <input type="text" id="username"><br>
         Password: <input type="password" id="password"><br>
-        <button id="submit" class="button">Submit info</button>';
+        <button id="login" class="button">Submit info</button>';
 }
 ?>
 <div id="fail"></div>
