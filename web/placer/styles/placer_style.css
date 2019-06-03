@@ -2,12 +2,11 @@ body {
     background-color: #fafafa;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-table {
+table,td,th,tr {
     border: 1px solid black;
+    padding: 5px;
 }
-td {
-    border: 1px solid black;
-}
+
 .button {
     background-color: #fafafa;
     border: 1px solid black;
