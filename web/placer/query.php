@@ -114,6 +114,16 @@ else if ($_POST['type'] == 'register') {
   echo 'Success';
   $_SESSION['registered'] = true;
 }
+else if ($_POST['type'] == 'change_section') {
+  $query = "UPDATE users
+            SET
+              instrument_id = (SELECT id FROM instruments WHERE instrument_desc =".$_POST['section'].")
+            WHERE
+              user_id =".$_POST['user'];
+  $stmt = $db->prepare($query);
+  $stmt->execute(); 
+
+}
 else {
   echo "type not found";
 }

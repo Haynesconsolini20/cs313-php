@@ -33,4 +33,13 @@ $(document).ready(function(){
 
             })
     })
+    $(".change_section").on("change", function(){
+        var user_id = this.id;
+        var section = this.val();
+        if (section == "none") return;
+        $.post("query.php",  {type: "change_section", section: section, user: user_id})
+            .done(function(data){
+                location.reload();
+            })
+    })
 });
