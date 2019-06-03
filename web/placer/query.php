@@ -122,6 +122,7 @@ else if ($_POST['type'] == 'change_section') {
               user_id =".$_POST['user'];
   $stmt = $db->prepare($query);
   $stmt->execute(); 
+  $_SESSION['query'] = $query;
 
 }
 else {

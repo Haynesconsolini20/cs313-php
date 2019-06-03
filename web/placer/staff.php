@@ -49,6 +49,7 @@ else if ($_SESSION['role'] == 'Staff') {
         echo 'Error!: ' . $ex->getMessage();
         die();
     }
+    print_r($_SESSION['query']);
     $students = array();
     $section_query = $db->query("SELECT id, first_name, last_name FROM users WHERE role_id = (SELECT id FROM roles WHERE role_desc = 'Member') AND instrument_id is null");
     echo "<table>
