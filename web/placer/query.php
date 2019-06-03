@@ -119,7 +119,7 @@ else if ($_POST['type'] == 'change_section') {
             SET
               instrument_id = (SELECT id FROM instruments WHERE instrument_desc =".$_POST['section'].")
             WHERE
-              user_id =".$_POST['user'];
+              id =".$_POST['user'];
   $_SESSION['query'] = $query;
   $stmt = $db->prepare($query);
   $stmt->execute(); 
